@@ -11,10 +11,17 @@ struct ContentView: View {
     @State private var messageString = ""
     
     var body: some View {
-        
-        Spacer()
-        
         VStack {
+            Text("You Have Skills!")
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .foregroundStyle(.goldBC)
+                .padding()
+                .background(.maroonBC)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+            
+            Spacer()
+            
             Text(messageString)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
@@ -23,22 +30,29 @@ struct ContentView: View {
                 .foregroundStyle(.red)
                 .frame(height: 150)
                 .frame(maxWidth: .infinity)
-                .border(.red, width: 2)
+            //                .border(.red, width: 2)
                 .padding()
+            
+            Spacer()
+            
             HStack {
                 Button("Awesome") {
                     messageString = "You Are Awesome!"
                 }
+                
+                Spacer()
+                
                 Button("Great") {
                     messageString = "You Are Great!"
                 }
-                
             }
             .buttonStyle(.borderedProminent)
-            
+            //            .border(.purple, width: 5)
+            .padding()
         }
-        
-        Spacer()
+        .background(
+            Gradient(colors: [.yellow, .orange])
+        )
     }
 }
 
