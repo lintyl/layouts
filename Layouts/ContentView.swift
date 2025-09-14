@@ -12,13 +12,14 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("You Have Skills!")
+            Text("Awesome!")
                 .font(.largeTitle)
                 .fontWeight(.black)
                 .foregroundStyle(.goldBC)
                 .padding()
+                .frame(maxWidth: .infinity)
                 .background(.maroonBC)
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+//                .clipShape(RoundedRectangle(cornerRadius: 15))
             
             Spacer()
             
@@ -30,7 +31,6 @@ struct ContentView: View {
                 .foregroundStyle(.red)
                 .frame(height: 150)
                 .frame(maxWidth: .infinity)
-            //                .border(.red, width: 2)
                 .padding()
             
             Spacer()
@@ -47,12 +47,12 @@ struct ContentView: View {
                 }
             }
             .buttonStyle(.borderedProminent)
-            //            .border(.purple, width: 5)
             .padding()
+            
+            Rectangle()
+                .frame(height: 0)
+                .background(.maroonBC)
         }
-        .background(
-            Gradient(colors: [.yellow, .orange])
-        )
     }
 }
 
